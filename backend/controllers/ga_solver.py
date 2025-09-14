@@ -4,12 +4,12 @@ from scipy.spatial.distance import cdist
 import random
 import os
 
-# --- CORRECTED FILE PATH LOGIC ---
+# --- FILE PATH LOGIC ---
 script_dir = os.path.dirname(__file__)
 file_path = os.path.join(script_dir, '..', '..', 'dataset', 'synthetic_routes_large.csv')
 df = pd.read_csv(file_path)
 
-# --- *** NEW, ACCURATE DISTANCE CALCULATION *** ---
+# --- *** ACCURATE DISTANCE CALCULATION *** ---
 def compute_haversine_distance_matrix(points):
     """
     Calculates the distance matrix using the Haversine formula to get
@@ -32,8 +32,6 @@ def compute_haversine_distance_matrix(points):
     c = 2 * np.arcsin(np.sqrt(a))
     distance_matrix = R * c
     return distance_matrix
-
-# --- EXISTING FUNCTIONS (UNCHANGED, BUT WILL NOW USE THE CORRECT DISTANCE) ---
 
 def load_points():
     points = df[['latitude', 'longitude']].values
@@ -87,7 +85,7 @@ def swap_mutation(route, mutation_rate=0.02):
     return route
 
 def ga_solver(points, depot_index, pop_size=100, generations=200):
-    # *** KEY CHANGE: Using the correct distance matrix ***
+
     distance_matrix = compute_haversine_distance_matrix(points)
     
     population = init_population(pop_size, len(points), depot_index)
@@ -141,4 +139,3 @@ if __name__ == "__main__":
     print("Please run the main Flask application instead by executing:")
     print("  python app.py")
     print("from the 'backend' directory.")
-
