@@ -221,9 +221,9 @@ function AppContent() {
     const location = useLocation();
     const showFooter = location.pathname !== '/optimizer';
     return (
-        <div className="flex flex-col min-h-screen bg-gray-50 font-sans"> {/*<-- CHANGED to min-h-screen*/} 
+        <div className="flex flex-col h-screen bg-gray-50 font-sans">
             <Header />
-            <div className="flex-grow flex flex-col overflow-y-auto"> {/* Also remove min-h-0 here for best results */}
+            <div className="flex-grow min-h-0 flex flex-col overflow-y-auto">
               <Routes>
                   <Route path="/" element={loggedIn ? <Homepage /> : <Navigate to="/login" replace />} />
                   <Route path="/optimizer" element={loggedIn ? <OptimizerPage /> : <Navigate to="/login" replace />} />
@@ -237,4 +237,3 @@ function AppContent() {
     );
 }
 export default function App() { return (<Router><AppContent /></Router>); }
-
