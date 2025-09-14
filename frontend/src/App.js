@@ -223,7 +223,7 @@ function AppContent() {
     return (
         <div className="flex flex-col min-h-screen bg-gray-50 font-sans"> {/*<-- CHANGED to min-h-screen*/} 
             <Header />
-            <div className="flex-grow flex flex-col"> {/* Also remove min-h-0 here for best results */}
+            <div className="flex-grow flex flex-col overflow-y-auto"> {/* Also remove min-h-0 here for best results */}
               <Routes>
                   <Route path="/" element={loggedIn ? <Homepage /> : <Navigate to="/login" replace />} />
                   <Route path="/optimizer" element={loggedIn ? <OptimizerPage /> : <Navigate to="/login" replace />} />
