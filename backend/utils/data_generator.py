@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 import math
+import os
 
 NUM_DELIVERY_POINTS = 50  # large dataset
 CITY_LAT = 17.3850         # Hyderabad approx
@@ -48,8 +49,14 @@ def generate_large_synthetic_dataset():
         })
 
     df = pd.DataFrame(data)
-    df.to_csv(r"C:\Users\Charan\OneDrive\Desktop\transport-optimizer\dataset/synthetic_routes_large.csv", index=False)
-    print("Large synthetic dataset saved as dataset/synthetic_routes_large.csv")
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(script_dir, '..', '..', 'dataset', 'synthetic_routes_large.csv')
+    file_path = os.path.abspath(file_path)
+    df.to_csv(file_path, index=False)
+
+    print(f"CSV saved at: {file_path}")
+
 
 if __name__ == "__main__":
     generate_large_synthetic_dataset()
