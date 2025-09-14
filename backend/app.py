@@ -5,7 +5,7 @@ from controllers.ga_solver import run_ga, df, run_ga_dynamic
 app = Flask(__name__)
 CORS(app)
 
-# --- EXISTING ROUTES (UNCHANGED) ---
+# --- EXISTING ROUTES ---
 
 @app.route("/api/optimize", methods=["GET"])
 def optimize_route():
@@ -27,7 +27,7 @@ def get_points():
     return jsonify(points)
 
 
-# --- *** NEW DYNAMIC ROUTE *** ---
+# --- *** DYNAMIC ROUTE *** ---
 
 @app.route("/api/optimize_dynamic", methods=["POST"])
 def optimize_dynamic_route():
