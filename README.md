@@ -38,6 +38,7 @@ graph TD;
     E --> F[Backend: Haversine Formula Computes Distances];
     F --> G[Backend Returns Optimized Route (IDs) & Total Distance];
     G --> H[Frontend Displays Route Polyline & Updates Manifest/Summary];
+---
 
 ## 🛠 Tech Stack
 
@@ -50,4 +51,4 @@ graph TD;
 | *Styling* | Tailwind CSS         |
 | *Testing (FE)*| Jest, React Testing Library (@testing-library/react, @testing-library/jest-dom) |
 
----
+
