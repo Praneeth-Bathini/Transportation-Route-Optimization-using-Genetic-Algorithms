@@ -43,6 +43,7 @@ graph TD;
     E --> F[Haversine Formula Computes Distances];
     F --> G[Optimized Route Returned to Frontend];
     G --> H[Frontend Displays Route, Manifest & Summary];
+    ---
 
 
 ## 🧬 Algorithm Steps
