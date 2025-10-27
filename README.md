@@ -33,8 +33,9 @@ Efficient route planning is critical in logistics and delivery management. This 
 | Data | CSV |
 | Authentication | Basic frontend auth for demonstration |
 
+
 ## ⚡ Workflow Diagram
-mermaid
+```mermaid
 graph TD;
     A[Add Points on Map] --> B[Frontend Displays Points on Leaflet Map];
     B --> C[User Clicks 'Find Optimal Route'];
@@ -43,8 +44,7 @@ graph TD;
     E --> F[Haversine Formula Computes Distances];
     F --> G[Optimized Route Returned to Frontend];
     G --> H[Frontend Displays Route, Manifest & Summary];
-    ---
-
+```
 
 ## 🧬 Algorithm Steps
 📥 *Input Data* – Points are collected (latitude, longitude, depot flag) either from a static CSV or user input.
