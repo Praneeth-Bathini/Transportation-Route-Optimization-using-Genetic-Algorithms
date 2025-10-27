@@ -126,3 +126,11 @@ transport-optimizer/
 - Persistent route saving and user profiles.  
 - Integration with Google Maps or OpenStreetMap APIs.  
 - Enhanced UI with progress visualization and live GA animation.
+
+
+💚 Support & Feedback
+If you found this project helpful, consider giving it a ⭐ on GitHub!
+For feedback or suggestions, reach out at praneethbathini2916@gmail.com
+
+
+"Routes aren’t just about distance—they’re about decisions. Optimize wisely."
